@@ -45,9 +45,9 @@ let allUsers = []; // All users in current chat room
 io.on("connection", (socket) => {
   // console.log(`User connected ${socket.id}`);
   socket.on("send_message", (data) => {
-    const { message, username, room, __createdtime__ } = data;
+    const { message, username, room, createdAt } = data;
     io.in(room).emit("receive_message", data);
-    saveMessage(message, username, room, __createdtime__).catch((err) =>
+    saveMessage(message, username, room, createdAt).catch((err) =>
       console.log(err)
     );
   });
@@ -61,17 +61,17 @@ io.on("connection", (socket) => {
         socket.emit("last_100_messages", last100Messages);
       })
       .catch((err) => console.log(err));
-    let __createdtime__ = Date.now();
+    let createdAt = Date.now();
     // Send message to all users currently in the room, apart from the user that just joined
     socket.to(room).emit("receive_message", {
       message: `${username} has joined the chat room`,
       username: CHAT_BOT,
-      __createdtime__,
+      createdAt,
     });
     socket.emit("receive_message", {
       message: `Welcome ${username}`,
       username: CHAT_BOT,
-      __createdtime__,
+      createdAt,
     });
     chatRoom = room;
     allUsers.push({ id: socket.id, username, room });
@@ -83,14 +83,14 @@ io.on("connection", (socket) => {
   socket.on("leave_room", (data) => {
     const { username, room } = data;
     socket.leave(room);
-    const __createdtime__ = Date.now();
+    const createdAt = Date.now();
     // Remove user from memory
     allUsers = allUsers.filter((user) => user.id != socket.id);
     socket.to(room).emit("chatroom_users", allUsers);
     socket.to(room).emit("receive_message", {
       username: CHAT_BOT,
       message: `${username} has left the chat`,
-      __createdtime__,
+      createdAt,
     });
     // console.log(`${username} has left the chat`);
   });
