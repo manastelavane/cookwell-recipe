@@ -1,0 +1,30 @@
+.new-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../Images/fingerchips-big.webp");
+    height: 62vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+}
+.new-hero-content{
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: white;
+    margin:  0 ;
+    padding: 20vh 5vw 72px;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 1px 2px black;
+}
+@media screen and (max-width:700px) {
+    .new-hero-content{
+        font-size: 2rem;
+    }
+    
+    .new-hero{
+        height: 40vh;
+    }
+}

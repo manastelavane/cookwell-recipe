@@ -1,0 +1,104 @@
+.contribute-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../Images/vegan1.avif");
+    height: 62vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+}
+.contribute-hero-content{
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: white;
+    margin:  0 ;
+    padding: 20vh 5vw 72px;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 1px 2px black;
+}
+.contribute-form-container{
+    background-color: #2dd29a;
+    padding: 10px;
+}
+.form-container{
+    background-color: white;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 15px;
+}
+.form-container>h1{
+    color: black;
+    text-align: center;
+}
+.css-mhc70k-MuiGrid-root{
+    display: block !important;
+}
+.textfield-up{
+    margin:0 10px;
+}
+#keywords{
+    padding: 10px;
+    line-height: 30px;
+}
+#image-textfield{
+    display: flex;
+    flex-wrap: wrap;
+}
+form{
+    margin: 20px;
+    margin-top: 40px;
+}
+.recipe-detail-heading{
+    font-size: 3vmax;
+}
+.time{
+    display: flex!important;
+    flex-wrap: wrap;
+}
+.textfield{
+    display: block;
+    width: 100%;
+    margin:10px 10px !important;
+}
+.time>.textfield{
+    width: auto;
+}
+
+span>.MuiFormControl-root{
+    margin: 10px!important;   
+}   
+.textfield .MuiFormControl-root{
+    margin: 0!important;
+}
+.ingdiv{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:700px) {
+    .contribute-hero{
+        height: 40vh;
+    }
+    .contribute-hero-content{
+        font-size: 2rem;
+    }
+    .form-container{
+        margin: 10px;
+    }
+    .textfield-up{
+
+        margin:0;
+    }
+    .time>.textfield{
+        width: 100%!important;
+    }
+    .time{
+        display: block;
+    }
+    .textfield{
+        width: 100%!important;
+    }
+   
+}

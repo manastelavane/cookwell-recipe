@@ -1,0 +1,37 @@
+.related-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://raw.githubusercontent.com/manastelavane/RecipeImages/main/Healthy_Food_Spread.jpg");
+    height: 62vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+}
+.related-hero-content{
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: white;
+    margin:  0 ;
+    padding: 20vh 5vw 72px;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 1px 2px black;
+}
+.recipe-container{
+    display: flex!important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0!important;
+}
+@media screen and (max-width:700px) {
+
+    .related-hero-content{
+        font-size: 1.5rem;
+    }
+    .related-hero{
+        height: 40vh;
+    }
+}
