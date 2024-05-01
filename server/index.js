@@ -19,6 +19,7 @@ app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader("Cache-Control", "public, max-age=86400");
+  res.removeHeader("ETag");
   next();
 });
 app.use("/user", userRouter);
@@ -39,7 +40,7 @@ const server = app.listen(PORT, () =>
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL,
   },
 });
 const CHAT_BOT = "ChatBot";
